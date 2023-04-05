@@ -11,6 +11,10 @@ var app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/', function (req, res, next) {
+    res.send('hello world')
+})
+
 app.get('/users', function (req, res, next) {
     connection.query(
         'SELECT * FROM `users`',
